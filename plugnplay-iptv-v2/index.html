@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Plug N Play IPTV streams 12,000+ live channels, movies & sports on any device. Cancel cable today.">
+  <title>Plug N Play IPTV – Cut the Cord. Watch Everything.</title>
+  <link rel="icon" href="/assets/logo.svg">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+  <!-- Alpine -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="text-gray-800 antialiased">
+<header x-data="{open:false,prev:0}"
+        x-on:scroll.window="const y=window.scrollY;$el.classList.toggle('translate-y-[-100%]',y>prev&&y>80);prev=y;"
+        class="fixed inset-x-0 top-0 z-50 bg-white shadow transition-transform duration-300">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+    <a href="/" class="shrink-0"><img src="/assets/logo.svg" alt="Plug N Play IPTV logo" class="h-10 w-auto"></a>
+    <nav class="hidden gap-8 md:flex">
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="/channels.html" class="nav-link">Channels</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+    </nav>
+    <a href="#pricing" class="btn-primary hidden md:inline-block">Get a Kit</a>
+    <button class="md:hidden" @click="open=!open" aria-label="Toggle menu">
+      <svg :class="{hidden:open}" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <svg :class="{hidden:!open}" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav x-show="open" x-transition class="md:hidden space-y-4 px-4 pb-4 pt-2">
+    <a href="#pricing" class="block nav-link">Pricing</a>
+    <a href="/channels.html" class="block nav-link">Channels</a>
+    <a href="/faq.html" class="block nav-link">FAQ</a>
+    <a href="#testimonials" class="block nav-link">Reviews</a>
+    <a href="#pricing" class="btn-primary w-full">Get a Kit</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero"
+  class="relative min-h-screen bg-gradient-to-br from-indigo-600 via-blue-600 to-purple-700 text-white
+         flex flex-col items-center justify-center px-4 lg:grid lg:grid-cols-2 lg:items-center">
+  <!-- Text side -->
+  <div class="text-center lg:text-left">
+    <h1 class="max-w-3xl text-4xl sm:text-6xl font-black tracking-tight">Cut the Cord. Watch Everything.</h1>
+    <p class="mt-4 max-w-xl text-lg sm:text-2xl">12,000+ live channels, movies & PPV – no contracts, no hidden fees.</p>
+    <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+      <a href="#pricing" class="btn-secondary">Get a Kit</a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-primary">Watch Demo</a>
+    </div>
+    <div class="mt-8 flex items-center justify-center lg:justify-start gap-2">
+      <img src="/assets/stars.svg" alt="5‑star rating" class="h-6 w-auto">
+      <span class="text-sm sm:text-base">Rated 4.8/5 by 500+ streamers</span>
+    </div>
+  </div>
+  <!-- Image side -->
+  <div class="hidden lg:flex items-center justify-center">
+    <img src="/assets/hero-side.png" alt="Plug N Play Fire TV mock‑up" class="max-h-[500px] w-auto drop-shadow-2xl">
+  </div>
+</section>
+
+<!-- CREDIBILITY BAR -->
+<section class="bg-white py-6">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-8 px-4 opacity-90">
+    <img src="/assets/logo-espn.png" alt="ESPN logo" class="h-8 w-auto">
+    <img src="/assets/logo-nfl.png" alt="NFL logo" class="h-8 w-auto">
+    <img src="/assets/logo-nba.png" alt="NBA logo" class="h-8 w-auto">
+    <img src="/assets/logo-ufc.png" alt="UFC logo" class="h-8 w-auto">
+    <img src="/assets/logo-disney.png" alt="Disney Channel logo" class="h-8 w-auto">
+    <img src="/assets/logo-hbo.png" alt="HBO logo" class="h-8 w-auto">
+    <img src="/assets/logo-showtime.png" alt="Showtime logo" class="h-8 w-auto">
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-white py-16">
+  <h2 class="text-center text-3xl font-extrabold mb-12">How it works</h2>
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="rounded-2xl bg-gray-50 p-6 shadow"><h3 class="text-xl font-semibold mb-2">1. Set up</h3><p>Plug in your Fire TV device and connect to Wi‑Fi.</p></div>
+    <div class="rounded-2xl bg-gray-50 p-6 shadow"><h3 class="text-xl font-semibold mb-2">2. Activate</h3><p>Enter the code from your Starter Kit email.</p></div>
+    <div class="rounded-2xl bg-gray-50 p-6 shadow"><h3 class="text-xl font-semibold mb-2">3. Stream</h3><p>Enjoy unlimited entertainment instantly.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="bg-gray-50 py-16">
+  <h2 class="text-center text-3xl font-extrabold mb-8">People are switching 🔥</h2>
+  <div class="swiper mx-auto max-w-6xl">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><article class="h-full rounded-2xl bg-white p-6 shadow"><p class="italic leading-relaxed">“Finally ditched cable; the UFC PPVs look crystal‑clear. Saved $100 a month.”</p><footer class="mt-4 font-semibold">— Carlos R., Riverside ★★★★★</footer></article></div>
+      <div class="swiper-slide"><article class="h-full rounded-2xl bg-white p-6 shadow"><p class="italic leading-relaxed">“Took five minutes to install and my kids have every cartoon channel.”</p><footer class="mt-4 font-semibold">— Jen L., Moreno Valley ★★★★★</footer></article></div>
+      <div class="swiper-slide"><article class="h-full rounded-2xl bg-white p-6 shadow"><p class="italic leading-relaxed">“NFL Sunday Ticket without the crazy fees? Sign me up.”</p><footer class="mt-4 font-semibold">— Derek S., Hemet ★★★★★</footer></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="bg-white py-16">
+  <h2 class="text-center text-3xl font-extrabold mb-8">Choose your plan</h2>
+  <div class="flex justify-center gap-4 py-4">
+    <button class="plan-toggle btn-secondary ring-2 ring-indigo-500" data-period="6">6 Months</button>
+    <button class="plan-toggle btn-secondary" data-period="12">12 Months</button>
+  </div>
+  <table class="mx-auto w-full max-w-4xl divide-y divide-gray-200 border">
+    <thead class="bg-gray-100 text-left text-sm uppercase tracking-wider"><tr><th class="p-4">Plan</th><th class="p-4">Devices</th><th class="p-4">Price</th></tr></thead>
+    <tbody class="divide-y divide-gray-100 text-gray-800">
+      <tr><td class="p-4 font-semibold">Starter Kit</td><td class="p-4">1 device</td><td class="p-4 price" data-price6="210" data-price12="350">$210</td></tr>
+      <tr><td class="p-4 font-semibold">2‑Connection</td><td class="p-4">2 devices</td><td class="p-4 price" data-price6="280" data-price12="480">$280</td></tr>
+      <tr><td class="p-4 font-semibold">3‑Connection</td><td class="p-4">3 devices</td><td class="p-4 price" data-price6="360" data-price12="600">$360</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div><img src="/assets/logo.svg" alt="Plug N Play IPTV" class="h-8 mb-4"><p>12,000+ channels, zero contracts. Plug N Play IPTV is Southern California’s fastest‑growing streaming provider.</p></div>
+    <div><h3 class="mb-4 font-semibold text-white">Navigate</h3><ul class="space-y-2"><li><a href="/" class="hover:underline">Home</a></li><li><a href="#pricing" class="hover:underline">Pricing</a></li><li><a href="/channels.html" class="hover:underline">Channels</a></li><li><a href="/faq.html" class="hover:underline">FAQ</a></li></ul></div>
+    <div><h3 class="mb-4 font-semibold text-white">Support</h3><ul class="space-y-2"><li><a href="#" class="hover:underline">Knowledge base</a></li><li><a href="#" class="hover:underline">Troubleshooting</a></li><li><a href="mailto:support@plugnplayiptv.com" class="hover:underline">Email us</a></li></ul></div>
+  </div>
+  <p class="text-center mt-8 text-sm">&copy; {year} Plug N Play IPTV. All rights reserved.</p>
+</footer>
+
+<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script>document.querySelector('footer p').innerHTML=document.querySelector('footer p').innerHTML.replace('{year}',new Date().getFullYear());</script>
+</body>
+</html>
